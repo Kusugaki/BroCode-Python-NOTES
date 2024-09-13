@@ -1,0 +1,3802 @@
+Python Coding
+
+
+https://www.youtube.com/watch?v=XKHEtdqhLK8&t=184s
+
+
+rfinder() 
+
+
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#2 - Variables
+#strings cannot be used for math, only integers (without quote marks)
+#strings + integers = TypeError
+
+FOUR BASIC DATA TYPES
+#Strings = letters
+#Integers = whole numbers
+#Float = numeric value that have decimals
+#Boolean = True or False
+
+print("string") or Print(variable)  = Prints into console
+print(type("something"))            = returns STRing/INTeger/FLOAT/BOOL
+print(variable1+" "+variable2)   = " " adds a space between the variables
+
+str(var)    = changes the "var"iable into a string to avoid TypeError
+        \__ called as typecasting
+---------------------------------------------------------------------------
+
+height = 250.5
+print("Your height is: "+str(height)+"cm")
+print(type(height))
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#3 - Multiple Assignment
+#multiple assignment = allows us to assign multiple variables at the same time in ONE line of code
+
+---------------------------------------------------------------------------
+
+#Use
+name, age, attractive = "Bro", 21, True
+
+#instead of
+name = "Bro"
+age = 21
+attractive = True
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#4
+len(name)            = returns how long the string is
+name.find("o")       = finds a character within a string (starts at 0)
+name.captialize()    = capitalizes the first letter in the string
+name.upper() = makes string ALL uppercase
+name.lower() = makes string ALL lowercase
+name.isdigit()   = returns True or False if string is a digit/integer
+name.isalpha()   = if string is ALL alphabetical letters (no spaces)
+name.count("o")  = counts how many characters i.e how many "o"
+name.replace("o","a")    = replaces all "o" characters with "a"
+name*3   = displays name THREE times (without spaces)
+name.center('x', "y") = length in character count(x) and empty space(y)
+name.swapcase() = changes lowercase to uppercase and vice versa
+name.title() = makes every first letter in every word uppercase (titlecase)
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#5 - Type Casting
+#type casting = convert the data type of a value to another data type
+
+---------------------------------------------------------------------------
+
+x = 1       #int
+y = 2.0     #float
+z = "3"     #str
+
+x = float(x)
+y = int(y)
+z = int(z)
+
+print(x)
+print(y)
+print(z*3)
+
+RETURNS
+
+1.0     #x
+2       #y
+9       #z
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#6 - User Input
+input()
+
+---------------------------------------------------------------------------
+
+name = input("What is your name?: ")
+age = int(input("How old are you?: "))     = [must only be a whole number]
+height = float(input("How tall are you?: "))
+
+age = age + 1       = [Needs int typecasting to calculate]
+
+print("Hello "+(name))              = [doesn't need typecasting when a string]
+print("You are "+str(age)+" years old") = [returns int(age) into str(age) print]
+print("You are "+str(height)" cm tall")
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#7 - Math Functions
+# these functions are located in the math module
+# always use "import math" before using math module codes
+
+---------------------------------------------------------------------------
+
+pi = -3.14
+
+round(pi) -> -3                   =round off
+    value.__round__(x)          = round off float(?)
+math.ceil(pi) -> -4              =ceiling
+math.floor(pi) -> -3            =floor
+abs(pi) -> 3.14                    =absolute value
+pow(pi,2) -> 9.8596            = value ^ raised to power of, "value"
+math.sqrt(420) -> 20.49     =square root
+
+x = 1
+y = 2
+z = 3
+
+max(x,y,z)  -> 3   = finds the maximum value between a set of values
+min(x,y,z) -> 1     = finds the minimum value between a set of values
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#8 - String Slicing
+# slicing = create a SUBSTRING by extracting elements from another string
+# indexing[] or slice()
+# [start:stop:step]
+#COMPUTERS ALWAYS START AT ZERO
+# first index = inclusive, stopping index = exclusive
+#step counts every 1st/2nd/3rd/4th/... character in the string
+# for every positive index (left) there is a negative index (starts at right)
+
+---------------------------------------------------------------------------
+#PART 1 - INDEXING
+name = "Bro Code"
+first_name = name[0:3]
+last_name = name[4:8]
+funky_name = name[0:8:2]
+reversed_name = name[::-1]
+
+RETURNS ---> Bro
+RETURNS --->Code
+RETURNS ---> BoCd
+RETURNS ---> edoC orB
+
+---------------------------------------------------------------------------
+
+#PART 2 - SLICING
+website1 = "http://google.com"
+website2 = "http://wikipedia.com"
+
+slice = slice(7,-4)
+
+print(website1[slice])
+print(website2[slice])
+
+RETURN ---> google
+RETURN ---> wikipedia
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#9 - IF STATEMENTS 
+# if statement = a block of code that will execute if it's condition is true
+if:
+else:
+elif:
+
+= assignment property
+== comparative/comparison property
+---------------------------------------------------------------------------
+
+age = int(input("How old are you?: "))
+
+if age == 100:
+    print("You are a century old!")
+elif age >= 100:
+    print("You are older than a century!")
+elif age >= 18 and age <= 99:
+    print("You are an adult!")
+elif age < 0:
+    print("You haven't been born yet!")
+else:
+    print("You are a child!")
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#10 - LOGICAL OPERATORS
+# logical operators (and, or, not) = used to check if two or more conditional statements are true
+#and
+#or
+#not()
+
+---------------------------------------------------------------------------
+
+temp = int(input("What is the temperature outside?: "))
+
+if temp >= 0 and temp <= 30:
+    print("the temperature is good today!")
+    print("go outside!")
+if temp < 0 or temp > 30:
+    print("the tempperature is bad today!")
+    print("stay inside!")
+
+OR
+
+temp = int(input("What is the temperature outside?: "))
+
+if not(temp >= 0 and temp <= 30):
+    print("the tempperature is bad today!")
+    print("stay inside!")
+if not(temp < 0 or temp > 30):
+    print("the temperature is good today!")
+    print("go outside!")
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#11 - WHILE LOOPS
+# while loop = a statement that will execute it's block of code
+# as long as its condition remains true
+
+#while:
+---------------------------------------------------------------------------
+
+name = ""
+while len(name) == 0:
+    name = input("Enter you name: ")
+
+print("Hello "+name)
+
+OR
+
+name = ""
+while not name:
+    name = input("Enter you name: ")
+
+print("Hello "+name)
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#12 - FOR LOOPS
+# for loop = a statement that will execute it's block of code a limited amount of times
+#for:
+
+---------------------------------------------------------------------------
+
+for i in range(10):
+    print(i+1)
+
+RETURNS ---> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+for i in range(50, 100+1):
+    print(i)
+
+RETURNS ---> 50, 51, 52, ..., 98, 99, 100
+
+for i in "Bro Code":
+    print(i)
+
+RETURNS ---> B, r, o, C, o, d, e
+
+---------------------------------------------------------------------------
+
+# Prints list in order
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  print(x)
+
+---------------------------------------------------------------------------
+
+import time         = time modules
+
+for seconds in range(10, 0, -1):        = [start, stop, step]
+    print(seconds)
+    time.sleep(1)                           = waits 1 second per code execution
+print("Happy New Year!")
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#13 - NESTED LOOPS
+# nested loops = the "inner loop" will finish all of its iterations before finishing one iteration of the "outer loop"
+# basically a loop inside a loop using (for:)
+
+---------------------------------------------------------------------------
+
+rows = int(input("How many rows?: "))
+columns = int(input("How many columns?: "))
+symbol = input("Enter a symbol to use: ")
+
+for i in range(rows):
+    for j in range(columns):
+        print(symbol, end="")
+    print()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#14 - BREAK CONTINUE PASS
+# Loop Control Statements = changes a loops execution from its normal sequence
+
+# break = used to terminate the loop entirely
+# continue = skips to the next iteration of the loop
+# pass = does nothing, acts as a placeholder
+
+---------------------------------------------------------------------------
+
+phone_number = "123-456-7890"
+
+for i in phone_number:
+    if i == "-":
+        continue
+    print(i)
+
+
+for i in range(1,21):
+    if i == 13:
+        pass
+    else:
+        print(i, end=", ")
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#15 - LISTS
+# list = used to store multiple items in a single variable
+
+# IndexError = out of list range
+# brackets not parentheses
+
+---------------------------------------------------------------------------
+
+list[ index ] --> index starts at zero
+list.append("") = adds to the existing string
+list.remove("") = removes whatever element is inputted
+list.insert(index, "x") = adds inbetween index a new element
+list.sort() = lists alphabetically
+list.clear() = removes all elements
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#16 - 2D LISTS
+# 2d lists = a list of lists
+
+---------------------------------------------------------------------------
+
+drinks = ["coffee","soda","tea"]
+dinner = ["pizza","hamburger","hotdog"]
+dessert = ["cake","ice cream"]
+
+food = [drinks, dinner, dessert]
+
+print(food[0][1]) ---> index 0 = drinks ---> index 1 = soda
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#17 - TUPLES
+# tuple = collection which is ordered and UNCHANGEABLE
+# used to group together related data
+# parentheses not brackets
+
+---------------------------------------------------------------------------
+
+student = ("Bro",21,"male")
+
+for x in student:
+    print(x)
+
+if "Bro" in student:
+    print("Bro is here!")
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#18 - SETS
+# set = collection which is unordered, unindexed.
+# No duplicate values
+# curly braces {}
+
+# faster than a list when needing to check an element within a set or list
+# any duplicates will just stay shown as only one
+
+---------------------------------------------------------------------------
+
+utensils = {"fork","spoon","knife"}
+dishes = {"bowl","plate","cup","knife"}
+dinner_table = utensils.union(dishes) #= joins two sets together
+
+for x in dinner_table:
+    print(x)
+
+---------------------------------------------------------------------------
+
+#utensils.add("napkin")
+#utensils.remove("fork")
+# utensils.clear()
+# utensils.update(dishes)    #adds 'dishes' set into 'utensils' set
+
+#utensils.difference(dishes))#prints what utensils has that dishes doesnt
+#utensils.intersection(dishes)#compares what both sets have in common
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 19 - DICTIONARIES
+# dictionary = A changeable, unordered collection of unique key:value pairs
+# Fast because they use hashing, allow us to access a value quickly
+
+#KeyError
+
+---------------------------------------------------------------------------
+
+capitals = "{'USA:'Washington DC','India':'New Delhi','China','Beijing','Russia':Moscow'}
+
+#print(capitals['Germany']) --> bad method
+print(capitals.get('Germany')) --> returns "none", much safer method
+
+---------------------------------------------------------------------------
+
+capitals.keys() --> prints only the keys not the values
+capitals.values() --> prints only the values
+capitals.update({'Germany':'Berlin'}) --> adds a new key:value pair
+capitals.update({'USA':'Las Vegas'}) --> overwrites existing key:value pair
+capitals.pop('China') --> removes key:value pair using only the key
+capitals.clear --> clears dictionary
+capitals.get()  --> gets values
+
+capitals.items --> prints entire dictionary
+
+or
+
+for key,value in capitals.items():
+    print(key, value)
+    #also prints entire dictionary
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 20 - INDEXING
+# index operator [ ] = gives access to a sequence's element (str, list, tuples)
+
+---------------------------------------------------------------------------
+
+name = "bro Code"
+if (name[0].islower()):
+    name = name.capitalize()
+print(name)
+
+---------------------------------------------------------------------------
+
+name = "bro Code!"
+
+first_name = name[0:3].upper()
+last_name = name[4:0].lower()
+last_character = name[-1]
+
+print(first_name)       #--> BRO
+print(last_name)        #--> code!
+print(last_character)   #--> !
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 21 - FUNCTIONS
+# function = a block of code which is executed only when it is called
+# define a function using 'def'
+# always ends with a set of parentheses and a colon
+# always indented
+# inside parentheses = arguments 
+# example:          def Function(argument):
+
+---------------------------------------------------------------------------
+
+def hello(name):
+    print("hello!"+name)
+
+hello("Bro")
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 22 - RETURN STATEMENT
+# return statement = used WITHIN functions send Python values/objects back to the caller
+# these values/objects are known as the function's return value
+
+---------------------------------------------------------------------------
+
+def multiply(number1, number2):
+    result = number 1 * number 2
+    return result
+
+print(multiply(6,8))       #Caller
+
+OR
+
+def multiply(number1, number2):
+    return number1 * number2
+
+print(multiply(6,8)
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 23 KEYWORD ARGUMENTS
+# arguments preceded by an identifier when we pass them to a function
+# The order of the arguments doesn't matter, unlike positional arguments
+# Python knows the names of the arguments that our function receives
+
+---------------------------------------------------------------------------
+
+hello("Bro","Dude","Code")  #--> Positional Arguments (order matters)
+
+# KEYWORD ARGUMENT
+def hello(first, middle, last):
+    print("Hello "+first+" "+middle+" "+last)
+
+hello(last="Code", middle="Dude", first="Bro") #--> (order doesn't matter)
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 24 - NESTED FUNCTION CALLS
+# function calls inside other function calls
+# innermost function calls are resolved first 
+# returned value is used as argument for thenext outer function
+
+---------------------------------------------------------------------------
+
+instead of:
+num = input("Enter a whole positive number: ")
+num = float(num)
+num = abs(num)
+num = round(num)
+print(num)
+
+use:
+print(round(abs(float(input("Enter a whole positive number: ")))))
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 25 - VARIABLE SCOPE
+# scope = the region that a variable is recognized
+# a variable is only a variable is ONLY available from INSIDE the REGION it is created
+# A global and locally scoped versions of a variable can be created
+
+# LEGB rule - Local>Enclosing>Global>Built-in variables in that order
+
+---------------------------------------------------------------------------
+
+name1 = "Bro"   #global scope (available inside & outside functions)
+
+def display_name():
+    name2 = "Code"   #local scope (Available only inside the function)
+    print(name2)    #prints local
+
+print(name) #prints global
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 26 - *ARGS
+# *args = parameter that will PACK ALL arguments into a tuple
+# useful so that a function can accept a VARYING AMOUNT of POSITIONAL ARGUMENTS
+
+# can be named to whatever, the most important part is the ASTERISK
+
+---------------------------------------------------------------------------
+
+def add(*args):
+    sum = 0
+    for i in args:
+        sum += i
+    return sum
+
+print(add(1,2,3))
+
+---------------------------------------------------------------------------
+
+def add(*stuff):
+    sum = 0
+    stuff = list(stuff)    #TypeCasts tuple into list (list is changeable/mutable)
+    stuff[0] = 0            #removes first value at index 0 = (1)
+    for i in stuff:
+        sum += i
+    return sum
+
+print(add(1,2,3,4,5,6))
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 27 - **KWARGS
+# **kwargs = parameter that will pack ALL arguments into a DICTIONARY
+# useful so that a function can accept a varying amount of KEYWORD ARGUMENTS
+
+# can be named to whatever, the most important part is the ASTERISKS
+
+---------------------------------------------------------------------------
+
+def hello(**kwargs):
+    #print("Hello " + kwargs["first"] + " " + kwargs["last"])
+    print("Hello", end=" ")
+    for key,value in kwargs.items():
+        print(value, end=" ")
+
+
+hello(title="Mr.",first="Bro",middle="Dude",last="Code")
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 28 - STRING FORMAT
+# str.format = optional method that gives users more control when displaying output
+
+# curly braces = format fields (placeholders)
+
+---------------------------------------------------------------------------
+
+animal = "cow"
+item = "moon"
+
+print("The "+animal+" jumped over the "+item)
+print("The {} jumped over the {}".format(animal,item))  
+print("The {0} jumped over the {1}".format(animal, item)) #POSITIONAL arg
+            # uses the index of the format()
+
+---------------------------------------------------------------------------
+print("The {animal} jumped over the {item}".format(animal="cow",item="moon"))   # KEYWORD arg
+---------------------------------------------------------------------------
+
+animal = "cow"
+item = "moon"
+
+text = "The {} jumped over the {}"
+print(text.format(animal,item))
+
+---------------------------------------------------------------------------
+
+name = "Bro"
+print("Hello, my name is {}".format(name))
+print("Hello, my name is {:10}".format(name)) #adds padding to the value
+print("Hello, my name is {0:<10}".format(name)) #index 0,left align,10spaces
+print("Hello, my name is {name:>10}".format(name))  #right align, 10spaces
+print("Hello, my name is {:^10}".format(name))  #centered alignment
+
+---------------------------------------------------------------------------
+
+number = 3.14159
+number2 = 1000
+
+print("The number pi is {:.2f}".format(number)) 
+                #.2f = rounds off number to two decimal points #.3f for 3 etc.
+print("The number is {:,}".format(number2))
+                # adds comma to all one thousands places
+print("The number is {:b}".format(number2))
+                # displays number as BINARY
+print("The number is {:o}".format(number2))
+                # displays number as OCTAL NUMBER
+print("The number is {:X}".format(number2))
+                # displays number as HEXADECIMAL
+print("The number is {:E}".format(number2))
+                # displays number in SCIENTIFIC NOTATION (capitalization)
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 29 - RANDOM NUMBERS
+# random MODULE = import random
+# pseudo-random numbers = not entirely random
+
+---------------------------------------------------------------------------
+
+x = random.randint(1,6) #random integer range from 1 to 6
+y = random.random() #random float from 0 to 1
+
+myList = ['rock','paper',scissors']
+z = random.choice(myList)
+
+cards = 1,2,3,4,5,5,6,7,8,9,"J","Q","K","A"]
+random.shuffle(cards)   #shuffles a list or other collection
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 30 - EXCEPTION HANDLING
+# exception = events detected during execution that interrupts the flow of a program
+# bad practice to leave a lone exception block
+
+---------------------------------------------------------------------------
+
+try:
+    numerator = int(input("Enter a number to divide: "))
+    denominator = int(input("Enter a number to divide by: "))
+    result = numerator / denominator
+    print(result)
+except ZeroDivisionError as e:  #standard practice to name as "e"
+    print(e)    #prints console error
+    print("You can't divide by zero! idiot!")
+except ValueError as e:
+    print(e)
+    print("Enter only numbers plz")
+except Exception as e:
+    print(e)
+    print("something went wrong :(")
+else:
+    print(result)
+finally:
+    #close file
+    print("This will always execute no matter what")
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 31 - FILE DETECTION
+# import os
+# you need double backslashes in a string
+# os.path.exists() , os.path.isfile() , os.path.isdir()
+
+for people who are struggling at 2:44:50 (File Path part) its because Windows 10 already adds the ".txt" on the txt document, so make sure to remove the ".txt" when naming a file, also remove the "C:" or whatever the drive you're trying to make a path to is called.
+Hope this helps, I've spent a while figuring this out too
+
+You can also just add an "r" before the path to make it raw string instead of string. For example: path = r"C:\Users\user\Desktop\test.txt"
+
+---------------------------------------------------------------------------
+
+import os
+
+path = "D:\\Python-Coding\\tabibito.txt"
+
+if os.path.exists(tabibito):
+    print("That location exists!")
+    if os.path.isfile(tabibito):
+        print("That is a file")
+    elif os.path.isdir(path):
+        print("That is a directory!")
+else:
+    print("That location doesn't exist!")
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 32 - READ A FILE
+# import os
+
+---------------------------------------------------------------------------
+
+import os
+
+bruh = "D:\\Python-Coding\\tabibito-june7th\\filereading.txt"
+
+try:
+    if os.path.exists(bruh):
+        with open(bruh) as file:
+            print(file.read())
+except FileNotFoundError:
+    print("No file found uwu sad face crying emoji :,(")
+
+# closes file automatically after reading
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 33 - WRITE A FILE
+# import os
+# might run into PermissionError:
+
+# with open('file_location','r/w/a') as file:
+# r = read , w = write , a = append
+# careful to not override a file using only 'w' mode
+
+---------------------------------------------------------------------------
+
+if os.path.exists("directory/file_location"):
+    with open("file_directory/location", "mode") as file:
+        print(file.write())
+        print(file.read())
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 34 - COPY A FILE
+# import shutil
+
+# copyfile('src', 'dst')  = copies contents of a file
+# copy()    = copyfile() + permission mode + destination can be a directory
+# copy2()   = copy() + copies metadata (file's creation and modification times)
+# 2 arguments = ('src', 'dst')
+
+---------------------------------------------------------------------------
+
+import shutil
+
+shutil.copyfile('test.txt','copy.txt')  # 2 args (source, destination)
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 35 - MOVE A FILE
+# import os (recommnded)
+
+---------------------------------------------------------------------------
+import os
+
+source = "test.txt"
+destination = "C:\\Users\\Aia\\Desktop\\test.txt"   # use 2 backslashes
+
+try:
+    # file detection (to not overwrite existing file)
+    if os.path.exists(destination):
+        print("There is already a file there")
+    else::
+        os.replace(source, destination)
+        print(source+"was moved")
+except FileNotFoundError:
+    print(source+" was not found")
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 36 - DELETE A FILE
+# import os
+
+# os.remove("file_location")
+# os.rmdir("directory_location")    #remove directory
+# shutil.rmtree("directory_location") #removes directory tree, ALL FILES IN DIRECTORY
+
+---------------------------------------------------------------------------
+
+import os
+import shutil
+
+# path = "test.txt"
+path = "folder"
+
+
+try: 
+    # os.remove(path)        # delete a file
+    os.rmdir(path)              #delete an EMPTY directory
+    # shutil.rmtree(path)   #delete a directory containing files, DANGEROUS
+except: FileNotFoundError:
+    print("That file was not found")
+except PermissionError:
+    print("You do not have permission to delete that")
+except OSError:
+    print("You cannot delete that using that function")
+else:
+    print(path+" was deleted"
+
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 37 - modules
+# module = a file containing python code. May contain functions, classes, etc.
+# used with MODULAR PROGRAMMING, which is to seperate a program into parts
+
+# help("modules")
+
+---------------------------------------------------------------------------
+
+@messages.py
+
+def hello():
+    print("Hello! Have a nice day!")
+
+def bye():
+    print("Bye! Have a wonderful time!")
+
+---------------------------------------------------------------------------
+
+@main.py
+
+import messages as msg
+
+# messages.hello()
+# messages.bye()
+msg.hello()
+msg.bye()
+
+OR
+
+from messages import hello,bye
+
+hello()
+bye()
+
+OR (not recommended for large programs due to naming complications i.e duplications)
+
+from messages import *  #imports ALL FUNCTIONS
+
+hello()
+bye()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 38 -rock, paper, scissors game
+# skipped lesson
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 39 - quiz game
+
+---------------------------------------------------------------------------
+
+# --------------------------
+def new_game():
+    guesses = []
+    correct_guesses = 0
+    question_num = 1
+
+    for key in questions:
+        print("--------------------------")
+        print(key)
+        for i in options[question_num - 1]:
+            print(i)
+        guess = input("Enter (A, B, C, or D): ").upper()
+        guesses.append(guess)
+
+        correct_guesses += check_answer(questions.get(key),guess)
+        quesiton_num += 1
+    
+    display_score(correct_guesses, guesses)
+# --------------------------
+def check_answer(answer, guess):
+    if answer == guess:
+        print("CORRECT!")
+        return 1
+    else:
+        print("WRONG!")
+        return 0
+# --------------------------
+def display_score(correct_guesses, guesses):
+    print("--------------------------")
+    print("RESULTS")
+    print("--------------------------")
+    
+    print("Answers: ", end="")
+    for i in questions:
+        print(questions.get(i), end=" ")
+    print()
+
+    print("Guesses: ", end="")
+    for i in questions:
+        print(questions.get(i), end=" ")
+    print()
+
+    score = int((correct_guesses/len(questions))*100)
+    print("Your score is: "+str(score)+"%")
+
+# --------------------------
+def play_again():
+    response = input("Do you want to play again? (y/n): ").upper()
+
+    if response == "Y":
+        return True
+    else:
+        return False
+
+
+questions = {
+    "Who created Python?: ": "A",
+    "What year was Python created?: ": "B",
+    "Python is tributed to which comedy group?: ": "C",
+    "Is the Earth round?: ": "A"
+}
+
+# 2d list
+options = [["A. Guido van Rossum", "B. Elon Musk", "C. Bill Gates", "D. Mark Zuckerberg"], ["A. 1989", "B. 1991", "C. 2000", "D. 2016"], ["A. Lonely Island", "B. Smosh", "C. Monty Python", "D. SNL"], ["A. True", "B. False", "C. sometimes", "D. What is Earth?"]]
+
+while play_again():
+    new_game()
+print("Bye!")
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 40 - Object Oriented Programing (OOP)
+# object is an instance of a class
+# self does not need to be attributed when being called (done automatically)
+---------------------------------------------------------------------------
+
+# @car.py
+class Car:
+    make = None
+    model = None
+    year = None
+    color = None
+
+    def __init__(self, make, model, year, color):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.color = color
+
+    def drive(self):
+        print(f"This {self.model} is driving")
+
+    def stop(self):
+        print(f"This {self.model} is stopped")
+
+
+# @main.py
+# from car import Car
+
+car_1 = Car("Chevy", "Corvette", 2021, "blue")
+car_2 = Car("Ford", "Mustang", 2022, "red")
+
+print(car_1.make)
+print(car_1.model)
+print(car_1.year)
+print(car_1.color)
+
+car_1.drive()
+car_2.stop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 41 - class variables
+# class variables = changes for all objects/instances of a class
+# instance variables = uniquely manipulated for each object
+# declared WITHIN a class but OUTSIDE of the constructor
+# default value
+
+
+---------------------------------------------------------------------------
+
+# @car.py
+class Car:
+
+    wheels = 4  # class variable
+
+    def __init__(self, make, model, year, color):
+        self.make = make        # instance variable
+        self.model = model     # instance variable
+        self.year = year            # instance variable
+        self.color = color         # instance variable
+
+# @main.py
+car_1 = Car("Chevy", "Corvette", 2021, "blue")
+car_2 = Car("Ford", "Mustang", 2022, "red")
+
+# Car.wheels = 2    # changes class variable for all instances of the class
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 42 - inheritance
+
+---------------------------------------------------------------------------
+
+class Animal:   # PARENT CLASS
+
+    alive = True
+    
+    def eat(self):
+        print("This animal is eating")
+
+    def sleep(self):
+        print("This animal is sleeping")
+
+class Rabbit(Animal):    # CHILD CLASS - inherits all Animal attributes
+    def run(self):
+        print("This rabbit is running")
+
+class Fish(Animal):        # CHILD CLASS - inherits all Animal attributes
+    def swim(self):
+        print("This fish is swimming")
+
+class Hawk(Animal):     # CHILD CLASS - inherits all Animal attributes
+    def fly(self):
+        print("This hawk is flying")
+
+rabbit = Rabbit()
+fish = Fish()
+hawk = Hawk()
+
+print(Rabbit.alive)
+fish.eat()
+hawk.sleep()
+
+rabbit.run()
+fish.swim()
+hawk.fly()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 43 - multi-level inheritance
+# multi-level inheretiance = when a derived (child) class inherits another derived (child) class
+
+---------------------------------------------------------------------------
+
+class Organism:
+    alive = True
+
+class Animal(Organism):
+    def eat(self):
+        print("This animal is eating")
+
+class Dog(Animal):
+    def bark(self):
+        print("This dog is barking")
+
+dog = Dog()
+print(dog.alive)
+dog.eat()
+dog.bark()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 44 - multiple inheritance
+# multiple inheritance = when a child class is derived from more than one parent class
+
+---------------------------------------------------------------------------
+
+class Prey:
+    def flee(self):
+        print("This animal flees")
+
+class Predator:
+    def hunt(self):
+        print("This animal is hunting")
+
+class Rabbit(Prey):
+    pass
+class Hawk(Predator):
+    pass
+class Fish(Prey, Predator):
+    pass
+
+rabbit = Rabbit()
+hawk = Hawk()
+fish = Fish()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 45 - method overriding
+# will use a method that is more closely associated with itself first before relying on a method inherited from a parent class
+
+---------------------------------------------------------------------------
+
+class Animal:
+    def eat(self):
+        print("This animal is eating")
+
+class Rabbit(Animal):
+    def eat(self):
+        print("This rabbit is eating a carrot")
+
+rabbit = Rabbit()
+rabbit.eat()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 46 - method chaining
+# method chaining = calling multiple methods sequentially
+# each call performs an action on the same object and returns self
+
+---------------------------------------------------------------------------
+# MUST RETURN SELF OTHRWISE RUN INTO NoneType ERROR
+class Car:
+    def turn_on(self):
+        print("You start the engine")
+        return self
+
+    def drive(self):
+        print("You drive the car")
+        return self
+
+    def brake(self):
+        print("You step on the brakes")
+        return self
+
+    def turn_off(self):
+        print("You turn off the engine")
+        return self
+
+car = Car()
+
+car.turn_on().drive()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 47 - super function
+# super() = Function used to give access to the methods of a parent class
+# Returns a temporary object of a parent class when used
+
+---------------------------------------------------------------------------
+# INSTEAD OF THIS
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+class Square(Rectangle):
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length*self.width
+
+class Cube(Rectangle):
+    def __init__(self, length, width, height):
+        self.length = length
+        self.width = width
+        self.height = height
+
+    def volume(self):
+        return self.length*self.width*self.height
+
+---------------------------------------------------------------------------
+# USE THIS
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+class Square(Rectangle):
+    def __init__(self, length, width):
+        super().__init__(length, width)
+
+    def area(self):
+        return self.length*self.width
+
+class Cube(Rectangle):
+    def __init__(self, length, width, height):
+        super().__init__(length, width)
+        self.height = height
+
+    def volume(self):
+        return self.length*self.width*self.height
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 48 - Abstract Classes
+# Prevents a user from creating an object of that class
+# + compels a user to override abstract methods in a child class
+
+# abstract class = a class which contains one or more abstract methods
+# abstract method = a method that has a declaration but does not have an implementation
+
+# abc = ABSTRACT BASE CLASS
+
+---------------------------------------------------------------------------
+
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+    @abstractmethod
+    def go(self):
+        pass
+
+    @abstractmethod
+    def stop(self):
+        pass
+
+class Car(Vehicle):
+    def go(self):
+        print("You drive the car")
+
+    def stop(self):
+        print("This car is stsopped")
+
+class Motorcycle(Vehicle):
+    def go(self):
+        print"You ride the motorcycle")
+
+    def stop(self):
+        print("This motorcycle is stopped")
+
+vehicle = Vehicle()
+car = Car()
+motorcycle = Motorcycle()
+
+vehicle.go()
+car.go()
+motorcycle.go()
+
+car.stop()
+motorcycle.stop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 49 - objects as arguments
+
+---------------------------------------------------------------------------
+
+class Car:
+    color = None
+
+class Motorcycle:
+    color = None    
+
+def change_color(car, color):
+    car.color = color
+
+car_1 = Car()
+car_2 = Car()
+car_3 = Car()
+bike_1 = Motorcycle()
+
+change_color(car_1, "red")
+change_color(car_2, "white")
+change_color(car_3, "blue")
+change_color(bike_1, "black")
+
+print(car_1.color)
+print(car_2.color)
+print(car_3.color)
+print(bike_1.color)
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 50 - Duck typing
+# Duck typing = concept where the class of an object is less important than the methods/attributes
+# class type is not checked if minimum method/attributes are present
+# "If it walks like a duck, and acts like a duck, then it must be a duck"
+
+# WORKS if the methods in the class is the same even when they are two different class names
+
+---------------------------------------------------------------------------
+
+class Duck:
+    def walk(self):
+        print("This duck is walking")
+
+    def talk(self):
+        print("This duck is quacking")
+
+class Chicken:
+    def walk(self):
+        print("This chicken is walking")
+    
+    def talk(self):
+        print("This chicken is clucking")
+
+class Person():
+    def catch(self, duck):
+        duck.walk()
+        duck.talk()
+        print("You caught the critter!")
+
+duck = Duck()
+chicken = Chicken()
+person = Person()
+
+person.catch(chicken)
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 51 - walrus operator
+# walrus operator :=
+# NEW to Python 3.8
+# ASSIGNMENT EXPRESSION aka walrus operator
+# assigns values to variables as part of a larger expression
+
+---------------------------------------------------------------------------
+# INSTEAD OF
+happy = True
+print(happy)
+
+# USE
+print(happy := True)
+
+---------------------------------------------------------------------------
+# INSTEAD OF
+foods = list()
+while True:
+    food = input("What food do you like?: ")
+    if food == "quit":
+        break
+    food.append(food)
+
+# USE
+foods = list()
+while food := input("What food do you like?: ") != "quit":
+    food.append(food)
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 52 - functions to variables
+# functions are assigned to variables
+# kind of like renaming a function
+
+---------------------------------------------------------------------------
+
+def hello():
+    print("Hello")
+
+hi = hello
+hello()
+hi()
+
+say = print
+say("Whoa! I can't' believe this works! :0")
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 53 - higher order functions
+# Higher Order Function = a function that either:
+# 1. accepts a function as an argument; or
+# 2. returns a afunction
+# In python, functions are also treated as objects
+
+---------------------------------------------------------------------------
+# 1.
+def loud(text):
+    return text.upper()
+
+def quiet(text):
+    return text.lower()
+
+def hello(func):
+    text = func("Hello")
+    print(text)
+
+hello(loud)
+---------------------------------------------------------------------------
+# 2.
+
+def divisor(x):
+    def dividend(y):
+        return y / x
+    return dividend
+
+divide = divisor(2) # divisor
+print(divide(10))    # dividend
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 54 - lambda
+# lambda funciton = function written in 1 line using lambda keyword
+# accepts ANY NUMBER OF ARGUMENTS, but ONLY has ONE EXPRESSION.
+# (think of it as a shortcut)
+# useful if needed for a short period of time, throw-away)
+
+# lambda parameters : expression
+
+---------------------------------------------------------------------------
+# INSTEAD OF
+def double(x):
+    return x * 2
+
+print(double(5))
+
+# USE
+double = lambda x:x * 2
+print(double(5))
+
+multiply = lambda x, y: x * y
+print(multiply(5,6))
+
+add = lambda x, y, z: x + y + z
+print(add(5, 6, 7))
+
+full_name = lambda first_name, last_name: first_name+" "+last_name
+print(full_name("Bro","Code"))
+
+age_check = lambda age:True if age >= 18 else False
+print(age_check(18))
+print(age_check(12))
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 55 - sort
+# sort() method = used with LISTS
+# sorted() function = used with ITERABLES (includes lists)
+# sort(key)
+# sort(reverse=True)    = sorts in reverse alphabetical order
+
+---------------------------------------------------------------------------
+
+students = ["Squidward", "Sandy", "Patrick", "Spongebob", "Mr.Krabs"]
+students.sort()
+
+for i in students:
+    print(i)
+
+---------------------------------------------------------------------------
+
+students = ("Squidward", "Sandy", "Patrick", "Spongebob", "Mr.Krabs")
+sorted_Students = sorted(students, reverse=True)
+
+for i in sorted_students:
+    print(i)
+
+---------------------------------------------------------------------------
+
+students = [("Squidward", "F", 60), ("Sandy", "A", 33), ("Patrick", "D" 36), ("Spongebob", "B", 20), ("Mr. Krabs"), "C" ,78)]
+
+grade = lambda grades:grade[1]
+students.sort(key=grade, reverse=True)
+
+for i in students:
+    print(i)
+
+age = lambda ages:ages[2]
+students.sort(key=age, reverse=True)
+
+for i in students:
+    print(i)
+
+---------------------------------------------------------------------------
+
+students = (("Squidward", "F", 60), ("Sandy", "A", 33), ("Patrick", "D" 36), ("Spongebob", "B", 20), ("Mr. Krabs"), "C" ,78))
+
+age = lambda ages:ages[2]
+sorted_students = sorted(students, key=age)
+
+for i in sorted_students:
+    print(i)
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 56 - map
+# map() = applies a function to each item in an iterable (list, tuple, etc.)
+
+# map(function, iterable)
+
+---------------------------------------------------------------------------
+
+store = [("shirts", 20.00), ("pants", 25.00), ("jacket", 50.00), ("socks", 10.00)]
+
+to_euros = lambda data: (data[0], data[1]*0.82)
+store_euros = list(map(to_euros, store))
+
+for i in store_euros:
+    print(i)
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 57 - filter
+# filter() = creates a collection of elements from an iterable for which a function returns true
+# kind of like a search results
+
+# filter(function, iterable)
+
+---------------------------------------------------------------------------
+
+friends = [("Rachel", 19), ("Monica", 18), ("Phoebe", 17), ("Joey", 16), ("Chandler", 21), ("Ross", 20)]
+
+age = lambda data:data[1] >= 18
+drinking_buddies = list(filter(age, friends))
+
+for i in drinking_buddies:
+    print(i)
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 58 - reduce() = apply a function to an iterable and reduce it to a single cumulative value
+# performs function on first two elements and repeats process until 1 value remains
+
+# reduce(function, iterable)
+
+---------------------------------------------------------------------------
+
+import functools
+
+letters = ["H", "E", "L", "L", "O"]
+word = functools.reduce(lambda x, y,: x+y, letters)
+print(word)
+
+---------------------------------------------------------------------------
+
+factorial [5, 4, 3, 2, 1]
+result = functools.reduce(lambda x, y, : x * y, factorial)
+print(result)
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 59 - list comprehensions
+# list comprehension = a way to create a new list with less syntax
+# can mimic certain lambda functions, easier to read
+# list = [expression (IF/ELSE) for item in iterable (IF CONDITIONAL)] 
+
+# list = [expression for item in iterable if conditional] 
+# list = [expression (if/else) for item in iterable] 
+
+---------------------------------------------------------------------------
+# INSTEAD OF
+squares = []                         # create an empty list
+for i in range(1, 11):             # create a for loop
+    squares.append(i * i)       # define what each loop iteration should do
+print(squares)
+
+# USE
+squares = [i * i for i in range(1,11)]
+print(squares)
+
+---------------------------------------------------------------------------
+# INSTEAD OF
+students = [100, 90, 80, 70, 60, 50, 40, 30, 0]
+passed_students = list(filter(lambda x: x >= 60, students))
+print(passed_students)
+
+# USE
+students = [100, 90, 80, 70, 60, 50, 40, 30, 0]
+passed_students = [i for i in students if i >= 60]
+print(passed students)          # if conditional
+
+students = [100, 90, 80, 70, 60, 50, 40, 30, 0]
+passed_students = [i if i >= 60 else "FAILED" for i in students]
+print(passed students)          # if/else
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 60 - dictionary comprehension = create dictionaries using an expressions
+# can replace for loops and certain lambda functions
+
+# dictionary = {key: expression for (key,value) in iterable}
+# dictionary = {key: expression for (key,value) in iterable if conditional}
+# dictionary = {key: (if/else) for (key,value) in iterable}
+# dicionary = {key: function(value) for (key,value) in iterable}
+
+---------------------------------------------------------------------------
+
+cities_in_F = {'New York': 32, 'Boston': 75, 'Los Angeles': 100, 'Chicago': 50}
+
+cities_in_C = {key: round((value-32*5/9)) for (key, value) in cities_in_F.items()}
+print(cities_in_C)
+
+---------------------------------------------------------------------------
+
+weather = {'New York': "snowing", 'Boston': "sunny", 'Los Angeles': "sunny", 'Chicago': "cloudy"}
+sunny_weather = {key: value for (key,value) in weather.items() if value == "sunny"}
+print(sunny_weather)
+
+---------------------------------------------------------------------------
+
+cities = {'New York': 32, 'Boston': 75, 'Los Angeles': 100, 'Chicago': 50}
+desc_cities = {key: ("WARM" if value >= 40 else "COLD") for (key,value) in cities.items())
+print(desc_cities)
+
+---------------------------------------------------------------------------
+
+def check_temp(value):
+    if value >= 70:
+        return "HOT"
+    elif 69 >= value >= 40:
+        return "WARM"
+    else:
+        return "COLD"
+
+cities = {'New York': 32, 'Boston': 75, 'Los Angeles': 100, 'Chicago': 50}
+desc_cities = {key: check_temp(value) for (key,value) in cities.items()}
+print(desc_cities)
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 61 - zip function = aggregate elements from two or more iterables (list, tuples, sets, etc.)
+# creates a zip object with paired elements stored in tuples for each element
+
+# zip(*iterables)
+
+---------------------------------------------------------------------------
+
+usernames = ["Dude", "Bro", "Mister"]
+passwords = ("p@ssword", "abc123", "guest")
+
+# users = zip(usernames, passwords)
+# users = list(zip(usernames, passwords))
+users = dict(zip(usernames, passwords))
+print(type(users))
+
+for key,value in users.items():
+    print(key+" : "+value)
+
+---------------------------------------------------------------------------
+
+usernames = ["Dude", "Bro", "Mister"]
+passwords = ("p@ssword", "abc123", "guest")
+login_date = ["1/1/2021", "1/2/2021", "1/3/2021"]
+
+users = zip(username, passwords, login_date)
+
+for i in users:
+    print(i)
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 62 -if __name__ == '__main__'
+# 1. Module can be run as a standalone program
+# 2. Module can be imported and used by other modules
+# checks if module is being run directly or indirectly
+
+# Python interpreter sets "special variables", one of which is __name__
+# Python will assign the __name__ variable a value of '__main__' if it's the initial module being run
+
+---------------------------------------------------------------------------
+
+import module_two
+
+print(__name__)
+print(module_two.__name__)
+
+---------------------------------------------------------------------------
+
+if __name__ == '__main__':
+    print("running this module directly")
+else:
+    print("running this module indirectly")
+
+---------------------------------------------------------------------------
+
+@ module_one.py
+
+def hello()
+    print("Hello!")
+
+if __name__ == '__main__'
+    hello()
+
+@ module_two.py
+
+import module_one
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 63 - time module
+
+# import time
+# time.ctime(0) 
+    # convert a time expressed in seconds since epoch to a readable string
+# time.time() # return current seconds since epoch
+# time.ctime(time.time()) # prints current time
+# time.gmtime()  # coordinated universal time
+# time.localtime()
+# time.strftime(format, time)
+# time.strptime(string, format)
+# time.asctime()     # tuple representation of a relative time
+# time.mktime()     # seconds since epoch
+    # (year, month, day, hours, minutes, secs, #day of the week, #day of the year, DaylightSavingsTime)
+
+
+# epoch = a date and time from which a computer measures time, when your computer thinks time began (reference point)
+---------------------------------------------------------------------------
+
+import time
+
+print(time.ctime(0))
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 64 -threading
+# thread = a flow of execution. Like a seperate order of instructions.
+    # however each thread takes a turn running to achieve concurrency
+    # GIL = (global interpreter lock),
+    # allows only one thread to hold the control of the Python interpreter at any one time
+
+# cpu bound = program/task that spends most of its time waiting for internal events (CPU intensive) use multiprocessing
+
+# io bound= program/task spends most of its time waiting for external events (user input, web scraping) use multithreading
+
+---------------------------------------------------------------------------
+
+import threading
+import time
+
+def eat_breakfast():
+    time.sleep(3)
+    print("You ate breakfast")
+
+def drink_coffee():
+    time.sleep(4)
+    print("You drank coffee")
+
+def study():
+    time.sleep(5)
+    print("You finish studying")
+
+x = threading.Thread(target=eat_breakfast, args=())
+x.start()
+
+y = threading.Thread(target=drink_coffee, args=())
+y.start()
+
+z = threading.Thread(target=study, args=())
+z.start()
+
+x.join()    # main thread waits for this threads to finish before finishing
+y.join()    # main thread waits for this threads to finish before finishing
+z.join()    # main thread waits for this threads to finish before finishing
+
+print(threading.active_count())
+print(threading.enumerate())
+print(time.perf_counter())
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 65 - daemon thread = a thread that runs in the background, not important for program to run
+# your program WILL NOT wait for daemon threads to complete before exiting
+# non-daemon threads CANNOT normally be killed, stay alive until task is complete
+
+# variable.setDaemon(True)  # set BEFORE starting a thread otherwise useless
+# variable.isDaemon()   # returns True or False
+
+---------------------------------------------------------------------------
+
+import threading
+import time
+
+def timer():
+    print()
+    print()
+    count = 0
+    while True:
+        time.sleep(1)
+        count += 1
+        print("logged in for", count, "seconds")
+
+x = threading.Thread(target=timer, daemon=True)
+x.start()
+
+
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 66 -multiprocessing
+# multiprocessing = running tasks in parallel on different cpu cores, bypasses GIL used for threads
+    # multiprocessing = better for CPU BOUND tasks (heavy cpu usage)
+    # multithreading = better for IO BOUND tasks (waiting around)
+
+# RECOMMENDED
+from multiprocessing import Process, cpu_count
+import time
+
+# if using windows processing system add this:
+if __name__ == '__main__'
+    main()
+
+# IF cpu_count IS LOWER THAN AMOUNT OF THREADS, NO PERFORMANCE DIFFERENCE MAY HAPPEN AND MAY TAKE LONGER THAN NORMAL (less threads using sufficient cpu cores, hindering performance of the computer)
+
+---------------------------------------------------------------------------
+
+from multiprocessing import Process, cpu_count
+import time
+
+def counter(num):
+    count = 0
+    while count < num:
+        count += 1
+
+def main():
+
+    print(cpu_count())  # output amount of cpu cores
+
+    # to differentiate from an expression add a comma in tuple
+    a = Process(target=counter, args=(250000000,))
+    b = Process(target=counter, args=(250000000,))
+    c = Process(target=counter, args=(250000000,))
+    d = Process(target=counter, args=(250000000,))
+
+    a.start()
+    b.start()
+    c.start()
+    d.start()
+
+    a.join()
+    b.join()
+    c.join()
+    d.join()
+
+    print("Finished in:",time.perf_counter(),"seconds")
+
+if __name__ == '__main__':
+    main()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 67 - GUI windows
+# import tkinter
+# GRAPHICAL USER INTERFACE
+# CAPITALIZATION
+
+# widgets = GUI elements: buttons, textboxes, labels, images
+# windows = serves as a container to hold or contain these widgets
+
+# convert photos into photoimage file format
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+
+window = Tk()   #instantiate an instance of a window
+window.geometry("420x420")  #widthXheight in quotes
+window.title("Bro Code First GUI Program")
+
+icon = PhotoImage(file='logo.png')  #file name OR file Path
+window.iconphoto(True, icon)
+window.config(background="black")   #color name OR hex value
+
+window.mainloop()   #place window on computer screen
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 68 - labels
+# label = an area widget that holds text and/or an image within a window
+
+Label( master/container, options/keyword_arguments )
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+
+window = Tk()
+
+# photo = PhotoImage(file='file_path')      # use double backslashes
+
+label = Label(window, 
+    text="Hello World", 
+    font=('Arial', 40, 'bold'), 
+    fg='#00FF00', 
+    bg='black', 
+    relief=RAISED, 
+    bd=10, 
+    padx=20, 
+    pady=20, 
+    image=photo, 
+    compound='botton'
+    )
+label.pack()
+#label.place(x=0, y=0)   # places at top left corner
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 69 - buttons
+
+# button = you click it, then it does stuff
+
+---------------------------------------------------------------------------
+
+count = 0
+
+def click():        # when being called don't use parentheses
+    global count
+    count +=1
+    print(count)
+
+window = Tk()
+
+photo = PhotoImage(file='file_path')
+
+button = Button(window, 
+    text="click me!", 
+    command=click, 
+    font=('Comic Sans', 30), 
+    fg="#00FF00", 
+    bg='black', 
+    actiiveforeground="#00FF00", 
+    activebackground="black", 
+    state=ACTIVE, 
+    image=photo, 
+    compound='bottom'
+    )
+button.pack()
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 70 - entrybox
+
+# entry widget = textbox that accepts a single line of user input
+
+---------------------------------------------------------------------------
+from tkinter import *
+
+def submit():
+    username = entry.get()
+    print("Hello "+ usename)
+    entry.config(state=DISABLED)
+
+def delete():
+    entry.delete(0, END)    # index, END = last index
+
+def backspace():
+    entry.delete(len(entry.get())-1, END)
+
+window = Tk()
+
+entry = Entry(window, font=("Arial", 50), fg="#00FF00", bg="black", show="*")
+
+#entry.insert() = 'Spongebob'        # default text
+#entry.config(show="*")      # for hiding password text
+#entry.config(state=DISABLED)        # for disabling after submission
+
+entry.pack(side=LEFT)
+
+submit_button = Button(window, text="submit", command=submit)
+submit_button.pack(side=RIGHT)
+
+delete_button = Button(window, text="delete", command=delete)
+delete_button.pack(side=RIGHT)
+
+backspace_button = Button(window, text="backspace", command=backspace)
+backspace_button.pack(side=RIGHT)
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 71 - checkbox
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+
+def display():
+    if(x.get()==1):
+        print("You agree!")
+    else:
+        print("'You don't agree")
+
+windows = Tk()
+
+x = IntVar()        # by default returns 1 or 0, can be String/BooleanVar()
+
+photo = PhotoImage(file="file_path")
+
+check_button = Checkbutton(window, 
+    text="I agree to something", 
+    variable=x, 
+    onvalue=1, 
+    offvalue=0, 
+    command=display, 
+    font=("Arial",20), 
+    fg="#00FF00", 
+    bg="black", 
+    activeforeground="#00FF00", 
+    activebackground="black", 
+    padx=25, 
+    pady=10, 
+    image=photo, 
+    compound="left"
+    )
+
+check_button.pack()
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 72 - radio buttons
+
+# radio button = similar to checkbox, but you can only SELECT ONE from a group
+
+radiobutton = Radiobutton(window, 
+    text=food[index],   #adds text to radio buttons
+    variable=x,     #groups radiobuttons together if they share the same value
+    value=index,    #assigns each radiobutton a different value
+    padx=25,     #adds padding on x-axis
+    font=("impact,50), 
+    image=foodImages[index],    #adds image to radiobutton
+    compound="left",    #adds image & text (left-side)
+    indicatoron=0,      #eliminate circle indicators
+    width=375,      #sets width of radio buttons
+    command=order      #set command of radiobutton to function
+    )
+---------------------------------------------------------------------------
+
+from tkinter import *
+
+food = ["pizza", "hamburger", "hotdog"]
+
+def order():
+    if(x.get()==0):
+        print("You ordered pizza")
+    elif(x.get()==1):
+        print("You ordered a hamburger")
+    elif(x.get()==2):
+        print("You ordered a hotdog")
+    else:
+        print("Huh?")
+
+window = Tk()
+
+pizzaImage = PhotoImage(file="file_path")
+hamburgerImage = PhotoImage(file="file_path")
+hotdogImage = PhotoImage(file="file_path")
+foodImages = [pizzaImage, hamburgerImage, hotdogImage]
+
+x = IntVar()
+
+for index in range(len(food)):
+    radiobutton = Radiobutton(window, 
+        text=food[index], 
+        variable=x, 
+        value=index, 
+        padx=25, 
+        font=("impact,50),
+        image=foodImages[index], 
+        compound="left", 
+        indicatoron=0, 
+        width=375, 
+        command=order
+        )
+    radiobutton.pack()
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 73 - scale
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+
+def submit():
+    print("The tempereature is: "+ str(scale.get()) +" degrees C")
+
+window = Tk()
+
+hotImage = PhotoImage(file='file_path')
+hotLabel = Label(image=hotImage)
+hotLabel.pack()
+
+coldImage = PhotoImage(file='file_path')
+coldLabel = Label(image=coldImage)
+coldLabel.pack()
+
+scale = Scale(window, 
+    from=0, 
+    to=100,
+    length=600,
+    orient=VERTICAL,
+    font=('Consolas', 20),
+    tickinterval=10,        # adds numeric indicators for value
+    showvalue=0,        # hide current value
+    resolution=5,       #increment of slider
+    troughcolor='#69EAFF',
+    fg='#FF1C00',
+    bg='#111111')
+    )
+scale.set(((scale['from']-scale['to'])/2)+scale['to'])  #set default value
+
+scale.pack()
+
+button = Button(window, text='submit', command=submit)
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 74 - listbox
+# listbox = A listing of selectable text items within its own container
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+
+
+def submit():
+
+    food = []
+
+    for index in listbox.curselection():
+        food.insert(index, listbox.get(index))
+
+    print("You have ordered: ")
+    for index in food:
+        print(index)
+
+
+def add():
+    listbox.insert(listbox.size(), entryBox.get())
+    listbox.config(height=listbox.size())
+
+
+def delete():
+    for index in reversed(listbox.curselection()):
+        listbox.delete(index)
+    listbox.config(height=listbox.size())
+
+
+window = Tk()
+
+listbox = Listbox(window,
+    bg="#f7ffde",
+    font=('Constantia', 35),
+    width=12,
+    selectmode=MULTIPLE
+    )
+listbox.pack()
+
+listbox.insert(1, "pizza")
+listbox.insert(2, "pasta")
+listbox.insert(3, "garlic bread")
+listbox.insert(4, "soup")
+listbox.insert(5, "salad")
+
+listbox.config(height=listbox.size())
+
+entryBox = Entry(window)
+entryBox.pack()
+
+submitButton = Button(window, text='Submit', command=submit)
+submitButton.pack()
+
+addButton = Button(window, text="add", command=add)
+addButton.pack()
+
+deleteButton = Button(window, text="delete", command=delete)
+deleteButton.pack()
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 75 - messagebox
+
+from tkinter import *
+from tkinter import messagebox
+
+.showinfo
+.showwarning
+.showerror
+.askokcancel
+.askretrycancel
+.askyesno
+.askquestion
+.askyesnocancel
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+from tkinter import messagebox
+
+def click():
+    # messagebox.showinfo(title='This is an info message box',
+ message='You are a person')
+    # messagebox.showwarning(title='WARNING!', message='You have a VIRUS')
+    # messagebox.showerror(title='ERROR!', message='something went wrong')
+    #if messagebox.askokcancel(title='ask ok cancel', message='Do you want to do the thing?'):
+        #print('You did a thing!')
+    #else:
+        #print('You canceled a thing!')
+
+    #if messagebox.askretrycancel(title='ask ok cancel', message='Do you want to retry the thing?'):
+        #print('You retried a thing!')
+    #else:
+        #print('You canceled a thing!')    
+
+    #if messagebox.askyesno(title='ask yes or no', message='Do you like cake?'):
+        #print('I like cake too')
+    #else:
+        #print('Why do you not like cake')
+
+    #answer = messagebox.askquestion(title='ask question', message='Do you like pie'))
+    #if (answer == 'yes'):
+        #print('I like pie too')
+    #else:
+        #print('Why do you not like pie?')
+
+    answer = messagebox.askyesnocancel(title='Yes no cancel', message='Do you like to code?', icon='warning/info/error')
+    if (answer is True):
+        print('You like to code')
+    elif (answer is False):
+        print('why')
+    else:
+        print('You have dodged the question')
+
+window = Tk()
+
+button = Button(window, command=click, text='click me')
+button.pack()
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 76 - color chooser
+
+from tkinter import *
+from tkinter import colorshooser    #submodule
+
+---------------------------------------------------------------------------
+from tkinter import *
+from tkinter import colorshooser    #submodule
+
+def click():
+    # color = colorchooser.askcolor()
+    # print(color)    # prints RGB values, Hexadecimal value
+    # colorHex = color[1]
+    # print(colorHex)
+    # window.config(bg=coloHex)   # change background color
+
+    window.config(bg=colorchooser.askcolor()[1])   # condensed line
+
+window = Tk()
+window.geometry('420x420')
+button = Button(text='click me', command=click)
+button.pack()
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 77 - text area
+
+# text widget = functions like a text area, you can enter multiple lines of text
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+
+def submit():
+    input = text.get("1.0", END)
+    print(input)
+
+window = Tk()
+text = Text(window,
+    bg="light yellow",
+    font=('Ink Free', 25),
+    height=8,
+    width=20,
+    padx=20,
+    pady=20,
+    fg='purple'
+    )
+text.pack()
+button = Button(window, command=submit, text="submit")
+button.pack()
+window.mainloop()
+
+---------------------------------------------------------------------------
+============================================
+============================================
+============================================
+============================================
+---------------------------------------------------------------------------
+
+# 78 - open a file (file dialog)
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+from tkinter import filedialog
+
+def openFile():
+    filepath = filedialog.askopenfilename(initialdir="C:\\Users\\Cakow\\PycharmProjects\\Main",
+                                          title="Open file okay?",
+                                          filetypes= (("text files","*.txt"),
+                                          ("all files","*.*")))
+    file = open(filepath,'r')
+    print(file.read())
+    file.close()
+
+window = Tk()
+button = Button(text="Open",command=openFile)
+button.pack()
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 79 - save a file (file dialog)
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+from tkinter import filedialog
+
+def saveFile():
+    file = filedialog.asksaveasfile(initialdir="C:\\Users\\Cakow\\PycharmProjects\\Main",
+                                    defaultextension='.txt',
+                                    filetypes=[
+                                        ("Text file",".txt"),
+                                        ("HTML file", ".html"),
+                                        ("All files", ".*"),
+                                    ])
+    if file is None:
+        return
+    filetext = str(text.get(1.0,END))
+    #filetext = input("Enter some text I guess: ") //use this if you want to use console window
+    file.write(filetext)
+    file.close()
+
+window = Tk()
+button = Button(text='save',command=saveFile)
+button.pack()
+text = Text(window)
+text.pack()
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 80 - menubar
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+
+def openFile():
+    print("File has been opened!")
+def saveFile():
+    print("File has been saved!")
+def cut():
+    print("You cut some text!")
+def copy():
+    print("You copied some text!")
+def paste():
+    print("You pasted some text!")
+
+window = Tk()
+
+openImage = PhotoImage(file="file.png")
+saveImage = PhotoImage(file="save.png")
+exitImage = PhotoImage(file="exit.png")
+
+menubar = Menu(window)
+window.config(menu=menubar)
+
+fileMenu = Menu(menubar,tearoff=0,font=("MV Boli",15))
+menubar.add_cascade(label="File",menu=fileMenu)
+fileMenu.add_command(label="Open",command=openFile,image=openImage,compound='left')
+fileMenu.add_command(label="Save",command=saveFile,image=saveImage,compound='left')
+fileMenu.add_separator()
+fileMenu.add_command(label="Exit",command=quit,image=exitImage,compound='left')
+
+editMenu = Menu(menubar,tearoff=0,font=("MV Boli",15))
+menubar.add_cascade(label="Edit",menu=editMenu)
+editMenu.add_command(label="Cut",command=cut)
+editMenu.add_command(label="Copy",command=copy)
+editMenu.add_command(label="Paste",command=paste)
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 81 - frames
+# frame = a rectangular container to group and hold widgets
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+
+window = Tk()
+
+frame = Frame(window,bg="pink",bd=5,relief=SUNKEN)
+frame.pack()
+
+Button(frame,text="W",font=("Consolas",25),width=3).pack(side=TOP)
+Button(frame,text="A",font=("Consolas",25),width=3).pack(side=LEFT)
+Button(frame,text="S",font=("Consolas",25),width=3).pack(side=LEFT)
+Button(frame,text="D",font=("Consolas",25),width=3).pack(side=LEFT)
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 82 - new windows
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+
+def create_window():
+    new_window = Tk()       #Toplevel() = new window 'on top' of other windows, linked to a 'bottom' window
+                            #Tk() = new independent window
+    #old_window.destroy()   #close out of old window
+
+old_window = Tk()
+
+Button(old_window,text="create new window",command=create_window).pack()
+
+old_window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 83 - window tabs
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+from tkinter import ttk
+
+window = Tk()
+
+notebook = ttk.Notebook(window) #widget that manages a collection of windows/displays
+
+tab1 = Frame(notebook) #new frame for tab 1
+tab2 = Frame(notebook) #new frame for tab 2
+
+notebook.add(tab1,text="Tab 1")
+notebook.add(tab2,text="Tab 2")
+notebook.pack(expand=True,fill="both")  #expand = expand to fill any space not otherwise used
+                                       #fill = fill space on x and y axis
+Label(tab1,text="Hello, this is tab#1",width=50,height=25).pack()
+Label(tab2,text="Goodbye, this is tab#2",width=50,height=25).pack()
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 84 - grid
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+
+#grid() = geometry manager that organizes widgets in a table-like structure in a parent widget
+
+window = Tk()
+
+titleLabel = Label(window,text="Enter your info",font=("Arial",25)).grid(row=0,column=0,columnspan=2)
+
+firstNameLabel = Label(window,text="First name: ",width=20,bg="red").grid(row=1,column=0)
+firstNameEntry = Entry(window).grid(row=1,column=1)
+
+lastNameLabel = Label(window,text="Last name: ",bg="green").grid(row=2,column=0)
+lastNameEntry = Entry(window).grid(row=2,column=1)
+
+emailLabel = Label(window,text="email: ",bg="blue").grid(row=3,column=0)
+emailEntry = Entry(window).grid(row=3,column=1)
+
+submitButton = Button(window,text="Submit").grid(row=4,column=0,columnspan=2)
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 85 - progress bar
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+from tkinter.ttk import *
+import time
+
+def start():
+    GB = 100
+    download = 0
+    speed = 1
+    while(download<GB):
+        time.sleep(0.05)
+        bar['value']+=(speed/GB)*100
+        download+=speed
+        percent.set(str(int((download/GB)*100))+"%")
+        text.set(str(download)+"/"+str(GB)+" GB completed")
+        window.update_idletasks()
+
+window = Tk()
+
+percent = StringVar()
+text = StringVar()
+
+bar = Progressbar(window,orient=HORIZONTAL,length=300)
+bar.pack(pady=10)
+
+percentLabel = Label(window,textvariable=percent).pack()
+taskLabel = Label(window,textvariable=text).pack()
+
+button = Button(window,text="download",command=start).pack()
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 86 - canvas
+# canvas = widget that is used to draw graphs, plots, images in a window
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+
+window = Tk()
+
+canvas = Canvas(window,height=500,width=500)
+#canvas.create_line(0,0,500,500,fill="blue",width=5)
+#canvas.create_line(0,500,500,0,fill="red",width=5)
+#canvas.create_rectangle(50,50,250,250,fill="purple")
+#points = [250,0,500,500,0,500]
+#canvas.create_polygon(points,fill="yellow",outline="black",width=5)
+#canvas.create_arc(0,0,500,500,style=PIESLICE,start=270,width=5)
+canvas.create_arc(0,0,500,500,fill="red",extent=180,width=10)
+canvas.create_arc(0,0,500,500,fill="white",extent=180,start=180,width=10)
+canvas.create_oval(190,190,310,310,fill="white",width=10)
+canvas.pack()
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 87 - keyboard events
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+
+def doSomething(event):
+    #print("You pressed: " + event.keysym)
+    label.config(text=event.keysym)
+
+window = Tk()
+
+window.bind("<Key>",doSomething)
+
+label = Label(window,font=("Helvetica",100))
+label.pack()
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 88 - mouse events
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+
+def doSomething(event):
+    print("Mouse coordinates: " + str(event.x)+","+str(event.y))
+
+window = Tk()
+
+window.bind("<Button-1>",doSomething) #left mouse click
+#window.bind("<Button-2>",doSomething) #scroll wheel
+#window.bind("<Button-3>",doSomething) #right mouse click
+#window.bind("<ButtonRelease>",doSomething)#mousebutton release
+#window.bind("<Enter>",doSomething) #enter the window
+#window.bind("<Leave>",doSomething) #leave the window
+#window.bind("<Motion>",doSomething) #Where the mouse moved
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 89 - drag & drop
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+
+def drag_start(event):
+    widget = event.widget
+    widget.startX = event.x
+    widget.startY = event.y
+
+def drag_motion(event):
+    widget = event.widget
+    x = widget.winfo_x() - widget.startX + event.x
+    y = widget.winfo_y() - widget.startY + event.y
+    widget.place(x=x,y=y)
+
+window = Tk()
+
+label = Label(window,bg="red",width=10,height=5)
+label.place(x=0,y=0)
+
+label2 = Label(window,bg="blue",width=10,height=5)
+label2.place(x=100,y=100)
+
+label.bind("<Button-1>",drag_start)
+label.bind("<B1-Motion>",drag_motion)
+
+label2.bind("<Button-1>",drag_start)
+label2.bind("<B1-Motion>",drag_motion)
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 90 - move images w/ keys
+
+---------------------------------------------------------------------------
+
+#------------move widgets on window-------------
+from tkinter import *
+
+def move_up(event):
+   label.place(x=label.winfo_x(), y=label.winfo_y()-10)
+def move_down(event):
+   label.place(x=label.winfo_x(), y=label.winfo_y()+10)
+def move_left(event):
+   label.place(x=label.winfo_x()-10, y=label.winfo_y())
+def move_right(event):
+   label.place(x=label.winfo_x()+10, y=label.winfo_y())
+
+window = Tk()
+window.geometry("500x500")
+
+window.bind("<w>",move_up)
+window.bind("<s>",move_down)
+window.bind("<a>",move_left)
+window.bind("<d>",move_right)
+window.bind("<Up>",move_up)
+window.bind("<Down>",move_down)
+window.bind("<Left>",move_left)
+window.bind("<Right>",move_right)
+
+myimage = PhotoImage(file='racecar.png')
+label = Label(window,image=myimage)
+label.place(x=0,y=0)
+
+window.mainloop()
+
+#-------------move images on canvas-------------
+
+from tkinter import *
+
+def move_up(event):
+   canvas.move(myimage,0,-10)
+def move_down(event):
+   canvas.move(myimage,0,10)
+def move_left(event):
+   canvas.move(myimage,-10,0)
+def move_right(event):
+   canvas.move(myimage,10,0)
+
+window = Tk()
+
+window.bind("<w>",move_up)
+window.bind("<s>",move_down)
+window.bind("<a>",move_left)
+window.bind("<d>",move_right)
+
+canvas = Canvas(window,width=500,height=500)
+canvas.pack()
+
+photoimage = PhotoImage(file='racecar.png')
+myimage = canvas.create_image(0,0,image=photoimage,anchor=NW)
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 91 - animations
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+import time
+
+WIDTH = 500
+HEIGHT = 500
+xVelocity = 1
+yVelocity = 1
+window = Tk()
+
+canvas = Canvas(window,width=WIDTH,height=HEIGHT)
+canvas.pack()
+
+background_photo = PhotoImage(file='space.png')
+background = canvas.create_image(0,0,image=background_photo,anchor=NW)
+
+photo_image = PhotoImage(file='ufo.png')
+my_image = canvas.create_image(0,0,image=photo_image,anchor=NW)
+
+image_width = photo_image.width()
+image_height = photo_image.height()
+
+while True:
+    coordinates = canvas.coords(my_image)
+    print(coordinates)
+    if(coordinates[0]>=(WIDTH-image_width) or coordinates[0]<0):
+        xVelocity = -xVelocity
+    if(coordinates[1]>=(HEIGHT-image_height) or coordinates[1]<0):
+        yVelocity = -yVelocity
+    canvas.move(my_image,xVelocity,yVelocity)
+    window.update()
+    time.sleep(0.01)
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 92 - multiple animations
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+from Ball import *
+import time
+
+window = Tk()
+
+WIDTH = 500
+HEIGHT = 500
+
+canvas = Canvas(window,width=WIDTH,height=HEIGHT)
+canvas.pack()
+
+volley_ball = Ball(canvas,0,0,100,1,1,"white")
+tennis_ball = Ball(canvas,0,0,50,4,3,"yellow")
+basket_ball = Ball(canvas,0,0,125,3,5,"orange")
+bowling_ball = Ball(canvas,0,0,75,2,1,"black")
+
+while True:
+    volley_ball.move()
+    tennis_ball.move()
+    basket_ball.move()
+    bowling_ball.move()
+    window.update()
+    time.sleep(0.01)
+
+window.mainloop()
+#*********************************************************
+class Ball:
+
+
+    def __init__(self,canvas,x,y,diameter,xVelocity,yVelocity,color):
+        self.canvas = canvas
+        self.image = canvas.create_oval(x,y,diameter,diameter,fill=color)
+        self.xVelocity = xVelocity
+        self.yVelocity = yVelocity
+
+    def move(self):
+        coordinates = self.canvas.coords(self.image)
+
+        if(coordinates[2]>=(self.canvas.winfo_width()) or coordinates[0]<0):
+            self.xVelocity = -self.xVelocity
+        if(coordinates[3]>=(self.canvas.winfo_height()) or coordinates[1]<0):
+            self.yVelocity = -self.yVelocity
+
+        self.canvas.move(self.image,self.xVelocity,self.yVelocity)
+#*********************************************************
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 93 - clock program
+
+---------------------------------------------------------------------------
+
+from tkinter import *
+from time import *
+
+def update():
+    time_string = strftime("%I:%M:%S %p")
+    time_label.config(text=time_string)
+
+    day_string = strftime("%A")
+    day_label.config(text=day_string)
+
+    date_string = strftime("%B %d, %Y")
+    date_label.config(text=date_string)
+
+    window.after(1000,update)
+
+
+window = Tk()
+
+time_label = Label(window,font=("Arial",50),fg="#00FF00",bg="black")
+time_label.pack()
+
+day_label = Label(window,font=("Ink Free",25,"bold"))
+day_label.pack()
+
+date_label = Label(window,font=("Ink Free",30))
+date_label.pack()
+
+update()
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 94 - send an email
+
+---------------------------------------------------------------------------
+
+#(If you have 2-Factor Authentication set up on your account, that #may prevent you from logging in from an unknown device)
+# **************************************************************
+# Python email
+# **************************************************************
+import smtplib
+
+sender = "sender@gmail.com"
+receiver = "receiver@gmail.com"
+password = "password123"
+subject = "Python email test"
+body = "I wrote an email! :D"
+
+# header
+message = f"""From: Snoop Dogg{sender}
+To: Nicholas Cage{receiver}
+Subject: {subject}\n
+{body}
+"""
+
+server = smtplib.SMTP("smtp.gmail.com", 587)
+server.starttls()
+
+try:
+    server.login(sender,password)
+    print("Logged in...")
+    server.sendmail(sender, receiver, message)
+    print("Email has been sent!")
+
+except smtplib.SMTPAuthenticationError:
+    print("unable to sign in")
+
+# **************************************************************
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 95 - run with command prompt
+
+---------------------------------------------------------------------------
+
+# ***************************
+# run .py file with cmd
+# ***************************
+# save file as .py (Python file)
+# go to command prompt
+# navigate to directory w/ your file: cd C:\Users\BroCode\Desktop
+# invoke python interpreter + script: python hello_world.py
+# ***************************
+
+print("Hello World!")
+
+name = input("What's your name?: ")
+
+print("Hello "+name)
+
+# ***************************
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 96 - pip
+
+---------------------------------------------------------------------------
+
+# **************************************************************
+# Python pip
+# **************************************************************
+#       pip = package manager for packages and modules from Python Package Index
+#
+#       included for Python versions 3.4+
+#       open command prompt
+#
+#       help:                                          pip
+#       check:                                       pip --version
+#       update:                                     pip install --upgrade pip
+#       installed packages:                pip list
+#       check outdated packages:    pip list --outdated
+#       update a package:                  pip install "package name" --upgrade
+#       install a package:                    pip install "package name"
+#
+# **************************************************************
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+#  97 - py to exe
+
+---------------------------------------------------------------------------
+
+(Windows Defender may prevent you from running)
+(make sure pip and pyinstaller are installed/updated)
+
+1. cd to directory that contains your .py file
+
+2. pyinstaller -F -w -i icon.ico clock.py
+
+  -F   (all in 1 file)
+  -w   (removes terminal window)
+  -i icon.ico  (adds custom icon to .exe)
+  clock.py  (name of your main python file)
+
+3. exe is located in the dist folder
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 98 - calculator program
+
+---------------------------------------------------------------------------
+
+# **************************************************************
+# Python Calculator
+# **************************************************************
+from tkinter import *
+
+def button_press(num):
+
+    global equation_text
+
+    equation_text = equation_text + str(num)
+
+    equation_label.set(equation_text)
+
+def equals():
+
+    global equation_text
+
+    try:
+
+        total = str(eval(equation_text))
+
+        equation_label.set(total)
+
+        equation_text = total
+
+    except SyntaxError:
+
+        equation_label.set("syntax error")
+
+        equation_text = ""
+
+    except ZeroDivisionError:
+
+        equation_label.set("arithmetic error")
+
+        equation_text = ""
+
+def clear():
+
+    global equation_text
+
+    equation_label.set("")
+
+    equation_text = ""
+
+
+window = Tk()
+window.title("Calculator program")
+window.geometry("500x500")
+
+equation_text = ""
+
+equation_label = StringVar()
+
+label = Label(window, textvariable=equation_label, font=('consolas',20), bg="white", width=24, height=2)
+label.pack()
+
+frame = Frame(window)
+frame.pack()
+
+button1 = Button(frame, text=1, height=4, width=9, font=35,
+                 command=lambda: button_press(1))
+button1.grid(row=0, column=0)
+
+button2 = Button(frame, text=2, height=4, width=9, font=35,
+                 command=lambda: button_press(2))
+button2.grid(row=0, column=1)
+
+button3 = Button(frame, text=3, height=4, width=9, font=35,
+                 command=lambda: button_press(3))
+button3.grid(row=0, column=2)
+
+button4 = Button(frame, text=4, height=4, width=9, font=35,
+                 command=lambda: button_press(4))
+button4.grid(row=1, column=0)
+
+button5 = Button(frame, text=5, height=4, width=9, font=35,
+                 command=lambda: button_press(5))
+button5.grid(row=1, column=1)
+
+button6 = Button(frame, text=6, height=4, width=9, font=35,
+                 command=lambda: button_press(6))
+button6.grid(row=1, column=2)
+
+button7 = Button(frame, text=7, height=4, width=9, font=35,
+                 command=lambda: button_press(7))
+button7.grid(row=2, column=0)
+
+button8 = Button(frame, text=8, height=4, width=9, font=35,
+                 command=lambda: button_press(8))
+button8.grid(row=2, column=1)
+
+button9 = Button(frame, text=9, height=4, width=9, font=35,
+                 command=lambda: button_press(9))
+button9.grid(row=2, column=2)
+
+button0 = Button(frame, text=0, height=4, width=9, font=35,
+                 command=lambda: button_press(0))
+button0.grid(row=3, column=0)
+
+plus = Button(frame, text='+', height=4, width=9, font=35,
+                 command=lambda: button_press('+'))
+plus.grid(row=0, column=3)
+
+minus = Button(frame, text='-', height=4, width=9, font=35,
+                 command=lambda: button_press('-'))
+minus.grid(row=1, column=3)
+
+multiply = Button(frame, text='*', height=4, width=9, font=35,
+                 command=lambda: button_press('*'))
+multiply.grid(row=2, column=3)
+
+divide = Button(frame, text='/', height=4, width=9, font=35,
+                 command=lambda: button_press('/'))
+divide.grid(row=3, column=3)
+
+equal = Button(frame, text='=', height=4, width=9, font=35,
+                 command=equals)
+equal.grid(row=3, column=2)
+
+decimal = Button(frame, text='.', height=4, width=9, font=35,
+                 command=lambda: button_press('.'))
+decimal.grid(row=3, column=1)
+
+clear = Button(window, text='clear', height=4, width=12, font=35,
+                 command=clear)
+clear.pack()
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 99 - text editor program
+
+---------------------------------------------------------------------------
+
+# ************************************
+# Python Text Editor
+# ************************************
+import os
+from tkinter import *
+from tkinter import filedialog, colorchooser, font
+from tkinter.messagebox import *
+from tkinter.filedialog import *
+
+
+def change_color():
+    color = colorchooser.askcolor(title="pick a color...or else")
+    text_area.config(fg=color[1])
+
+
+def change_font(*args):
+    text_area.config(font=(font_name.get(), size_box.get()))
+
+
+def new_file():
+    window.title("Untitled")
+    text_area.delete(1.0, END)
+
+
+def open_file():
+    file = askopenfilename(defaultextension=".txt",
+                           file=[("All Files", "*.*"),
+                                 ("Text Documents", "*.txt")])
+
+    if file is None:
+        return
+
+    else:
+        try:
+            window.title(os.path.basename(file))
+            text_area.delete(1.0, END)
+
+            file = open(file, "r")
+
+            text_area.insert(1.0, file.read())
+
+        except Exception:
+            print("couldn't read file")
+
+        finally:
+            file.close()
+
+
+def save_file():
+    file = filedialog.asksaveasfilename(initialfile='unititled.txt',
+                                        defaultextension=".txt",
+                                        filetypes=[("All Files", "*.*"),
+                                                   ("Text Documents", "*.txt")])
+
+    if file is None:
+        return
+
+    else:
+        try:
+            window.title(os.path.basename(file))
+            file = open(file, "w")
+
+            file.write(text_area.get(1.0, END))
+
+        except Exception:
+            print("couldn't save file")
+
+        finally:
+            file.close()
+
+
+def cut():
+    text_area.event_generate("<<Cut>>")
+
+
+def copy():
+    text_area.event_generate("<<Copy>>")
+
+
+def paste():
+    text_area.event_generate("<<Paste>>")
+
+
+def about():
+    showinfo("About this program", "This is a program written by YOUUUUU!!!")
+
+
+def quit():
+    window.destroy()
+
+
+window = Tk()
+window.title("Text editor program")
+file = None
+
+window_width = 500
+window_height = 500
+screen_width = window.winfo_screenwidth()
+screen_height = window.winfo_screenheight()
+
+x = int((screen_width / 2) - (window_width / 2))
+y = int((screen_height / 2) - (window_height / 2))
+
+window.geometry("{}x{}+{}+{}".format(window_width, window_height, x, y))
+
+font_name = StringVar(window)
+font_name.set("Arial")
+
+font_size = StringVar(window)
+font_size.set("25")
+
+text_area = Text(window, font=(font_name.get(), font_size.get()))
+
+scroll_bar = Scrollbar(text_area)
+window.grid_rowconfigure(0, weight=1)
+window.grid_columnconfigure(0, weight=1)
+text_area.grid(sticky=N + E + S + W)
+scroll_bar.pack(side=RIGHT, fill=Y)
+text_area.config(yscrollcommand=scroll_bar.set)
+
+frame = Frame(window)
+frame.grid()
+
+color_button = Button(frame, text="color", command=change_color)
+color_button.grid(row=0, column=0)
+
+font_box = OptionMenu(frame, font_name, *font.families(), command=change_font)
+font_box.grid(row=0, column=1)
+
+size_box = Spinbox(frame, from_=1, to=100, textvariable=font_size, command=change_font)
+size_box.grid(row=0, column=2)
+
+menu_bar = Menu(window)
+window.config(menu=menu_bar)
+
+file_menu = Menu(menu_bar, tearoff=0)
+menu_bar.add_cascade(label="File", menu=file_menu)
+file_menu.add_command(label="New", command=new_file)
+file_menu.add_command(label="Open", command=open_file)
+file_menu.add_command(label="Save", command=save_file)
+file_menu.add_separator()
+file_menu.add_command(label="Exit", command=quit)
+
+edit_menu = Menu(menu_bar, tearoff=0)
+menu_bar.add_cascade(label="Edit", menu=edit_menu)
+edit_menu.add_command(label="Cut", command=cut)
+edit_menu.add_command(label="Copy", command=copy)
+edit_menu.add_command(label="Paste", command=paste)
+
+help_menu = Menu(menu_bar, tearoff=0)
+menu_bar.add_cascade(label="Help", menu=help_menu)
+help_menu.add_command(label="About", command=about)
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 100 - tic tac toe game
+
+---------------------------------------------------------------------------
+
+# ******************************************************
+# Python Tic Tac Toe game
+# ******************************************************
+
+from tkinter import *
+import random
+
+def next_turn(row, column):
+
+    global player
+
+    if buttons[row][column]['text'] == "" and check_winner() is False:
+
+        if player == players[0]:
+
+            buttons[row][column]['text'] = player
+
+            if check_winner() is False:
+                player = players[1]
+                label.config(text=(players[1]+" turn"))
+
+            elif check_winner() is True:
+                label.config(text=(players[0]+" wins"))
+
+            elif check_winner() == "Tie":
+                label.config(text="Tie!")
+
+        else:
+
+            buttons[row][column]['text'] = player
+
+            if check_winner() is False:
+                player = players[0]
+                label.config(text=(players[0]+" turn"))
+
+            elif check_winner() is True:
+                label.config(text=(players[1]+" wins"))
+
+            elif check_winner() == "Tie":
+                label.config(text="Tie!")
+
+def check_winner():
+
+    for row in range(3):
+        if buttons[row][0]['text'] == buttons[row][1]['text'] == buttons[row][2]['text'] != "":
+            buttons[row][0].config(bg="green")
+            buttons[row][1].config(bg="green")
+            buttons[row][2].config(bg="green")
+            return True
+
+    for column in range(3):
+        if buttons[0][column]['text'] == buttons[1][column]['text'] == buttons[2][column]['text'] != "":
+            buttons[0][column].config(bg="green")
+            buttons[1][column].config(bg="green")
+            buttons[2][column].config(bg="green")
+            return True
+
+    if buttons[0][0]['text'] == buttons[1][1]['text'] == buttons[2][2]['text'] != "":
+        buttons[0][0].config(bg="green")
+        buttons[1][1].config(bg="green")
+        buttons[2][2].config(bg="green")
+        return True
+
+    elif buttons[0][2]['text'] == buttons[1][1]['text'] == buttons[2][0]['text'] != "":
+        buttons[0][2].config(bg="green")
+        buttons[1][1].config(bg="green")
+        buttons[2][0].config(bg="green")
+        return True
+
+    elif empty_spaces() is False:
+
+        for row in range(3):
+            for column in range(3):
+                buttons[row][column].config(bg="yellow")
+        return "Tie"
+
+    else:
+        return False
+
+
+def empty_spaces():
+
+    spaces = 9
+
+    for row in range(3):
+        for column in range(3):
+            if buttons[row][column]['text'] != "":
+                spaces -= 1
+
+    if spaces == 0:
+        return False
+    else:
+        return True
+
+def new_game():
+
+    global player
+
+    player = random.choice(players)
+
+    label.config(text=player+" turn")
+
+    for row in range(3):
+        for column in range(3):
+            buttons[row][column].config(text="",bg="#F0F0F0")
+
+
+window = Tk()
+window.title("Tic-Tac-Toe")
+players = ["x","o"]
+player = random.choice(players)
+buttons = [[0,0,0],
+           [0,0,0],
+           [0,0,0]]
+
+label = Label(text=player + " turn", font=('consolas',40))
+label.pack(side="top")
+
+reset_button = Button(text="restart", font=('consolas',20), command=new_game)
+reset_button.pack(side="top")
+
+frame = Frame(window)
+frame.pack()
+
+for row in range(3):
+    for column in range(3):
+        buttons[row][column] = Button(frame, text="",font=('consolas',40), width=5, height=2,
+                                      command= lambda row=row, column=column: next_turn(row,column))
+        buttons[row][column].grid(row=row,column=column)
+
+window.mainloop()
+
+# ******************************************************
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 101 - snake game
+
+---------------------------------------------------------------------------
+
+# ************************************
+# Python Snake
+# ************************************
+from tkinter import *
+import random
+
+GAME_WIDTH = 700
+GAME_HEIGHT = 700
+SPEED = 50
+SPACE_SIZE = 50
+BODY_PARTS = 3
+SNAKE_COLOR = "#00FF00"
+FOOD_COLOR = "#FF0000"
+BACKGROUND_COLOR = "#000000"
+
+
+class Snake:
+
+    def __init__(self):
+        self.body_size = BODY_PARTS
+        self.coordinates = []
+        self.squares = []
+
+        for i in range(0, BODY_PARTS):
+            self.coordinates.append([0, 0])
+
+        for x, y in self.coordinates:
+            square = canvas.create_rectangle(x, y, x + SPACE_SIZE, y + SPACE_SIZE, fill=SNAKE_COLOR, tag="snake")
+            self.squares.append(square)
+
+
+class Food:
+
+    def __init__(self):
+
+        x = random.randint(0, (GAME_WIDTH / SPACE_SIZE)-1) * SPACE_SIZE
+        y = random.randint(0, (GAME_HEIGHT / SPACE_SIZE) - 1) * SPACE_SIZE
+
+        self.coordinates = [x, y]
+
+        canvas.create_oval(x, y, x + SPACE_SIZE, y + SPACE_SIZE, fill=FOOD_COLOR, tag="food")
+
+
+def next_turn(snake, food):
+
+    x, y = snake.coordinates[0]
+
+    if direction == "up":
+        y -= SPACE_SIZE
+    elif direction == "down":
+        y += SPACE_SIZE
+    elif direction == "left":
+        x -= SPACE_SIZE
+    elif direction == "right":
+        x += SPACE_SIZE
+
+    snake.coordinates.insert(0, (x, y))
+
+    square = canvas.create_rectangle(x, y, x + SPACE_SIZE, y + SPACE_SIZE, fill=SNAKE_COLOR)
+
+    snake.squares.insert(0, square)
+
+    if x == food.coordinates[0] and y == food.coordinates[1]:
+
+        global score
+
+        score += 1
+
+        label.config(text="Score:{}".format(score))
+
+        canvas.delete("food")
+
+        food = Food()
+
+    else:
+
+        del snake.coordinates[-1]
+
+        canvas.delete(snake.squares[-1])
+
+        del snake.squares[-1]
+
+    if check_collisions(snake):
+        game_over()
+
+    else:
+        window.after(SPEED, next_turn, snake, food)
+
+
+def change_direction(new_direction):
+
+    global direction
+
+    if new_direction == 'left':
+        if direction != 'right':
+            direction = new_direction
+    elif new_direction == 'right':
+        if direction != 'left':
+            direction = new_direction
+    elif new_direction == 'up':
+        if direction != 'down':
+            direction = new_direction
+    elif new_direction == 'down':
+        if direction != 'up':
+            direction = new_direction
+
+
+def check_collisions(snake):
+
+    x, y = snake.coordinates[0]
+
+    if x < 0 or x >= GAME_WIDTH:
+        return True
+    elif y < 0 or y >= GAME_HEIGHT:
+        return True
+
+    for body_part in snake.coordinates[1:]:
+        if x == body_part[0] and y == body_part[1]:
+            return True
+
+    return False
+
+
+def game_over():
+
+    canvas.delete(ALL)
+    canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,
+                       font=('consolas',70), text="GAME OVER", fill="red", tag="gameover")
+
+
+window = Tk()
+window.title("Snake game")
+window.resizable(False, False)
+
+score = 0
+direction = 'down'
+
+label = Label(window, text="Score:{}".format(score), font=('consolas', 40))
+label.pack()
+
+canvas = Canvas(window, bg=BACKGROUND_COLOR, height=GAME_HEIGHT, width=GAME_WIDTH)
+canvas.pack()
+
+window.update()
+
+window_width = window.winfo_width()
+window_height = window.winfo_height()
+screen_width = window.winfo_screenwidth()
+screen_height = window.winfo_screenheight()
+
+x = int((screen_width/2) - (window_width/2))
+y = int((screen_height/2) - (window_height/2))
+
+window.geometry(f"{window_width}x{window_height}+{x}+{y}")
+
+window.bind('<Left>', lambda event: change_direction('left'))
+window.bind('<Right>', lambda event: change_direction('right'))
+window.bind('<Up>', lambda event: change_direction('up'))
+window.bind('<Down>', lambda event: change_direction('down'))
+
+snake = Snake()
+food = Food()
+
+next_turn(snake, food)
+
+window.mainloop()
+
+---------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------
+
+# 102 - RECURSION
+
+---------------------------------------------------------------------------
+
+# recursion = a function that calls itself from within
+#                      helps to visualize a complex problem into basic steps
+#                      problems can be solved more easily iteratively or recursively
+#                      iterative = faster, complex
+#                      recursive = slower, simpler
+
+# ----- EXAMPLE 1 -----
+
+# ITERATIVE
+def walk(steps):
+    for step in range(1, steps+1):
+        print(f"You take step #{step}")
+
+# RECURSIVE
+def walk(steps):
+    if steps == 0:
+        return
+    walk(steps - 1)
+    print(f"You take step #{steps}")
+
+walk(100)
+
+# ----- EXAMPLE 2 -----
+
+# ITERATIVE
+def factorial(x):
+    result = 1
+    if x > 0:
+        for i in range(1, x + 1):
+            result *= i
+        return result
+
+# RECURSIVE
+def factorial(x):
+    if x == 1:
+        return 1
+    else:
+        return x * factorial(x - 1)
+
+print(factorial(10)
+
+
+
